@@ -1,0 +1,10 @@
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          clone-on-start: true
+  security:
+    user:
+      name: admin
+      password: admin
