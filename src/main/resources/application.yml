@@ -6,6 +6,8 @@ spring:
           clone-on-start: true
           # We don't want cloned repo to be removed from /tmp
           # See https://cloud.spring.io/spring-cloud-config/reference/html/#_version_control_backend_filesystem_use
+          #
+          # Nested directory is a workaround for https://github.com/spring-cloud/spring-cloud-config/pull/1456
           basedir: git-cache/cache
   security:
     user:
