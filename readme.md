@@ -15,7 +15,8 @@ The easiest way to run Spring Cloud Config server is using Docker client:
       -e SPRING_CLOUD_CONFIG_SERVER_GIT_URI=https://github.com/owner/config-repo.git \
       -e AWS_REGION=$AWS_REGION \ 
       -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \ 
-      -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \ 
+      -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
+      -e AWS_KMS_KEYID=myKeyId \ 
       hekonsek/awsom-spring-cloud-config-server:0.1.0
       
 Where:
@@ -25,14 +26,16 @@ repository should be used by config server. Keep in mind that you need only read
 write access is not necessary.
 - `AWS_REGION`, `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` are AWS credentials passed via standard AWS environment 
 variables.
+- `AWS_KMS_KEYID` either the keyId or the full ARN of the KMS key that should be used for encryption
 
 ## Default settings
 
 By default this Cloud Config server distribution uses the following settings:
 
+- default security is set to Basic Auth with username and password set to `admin` and `admin`
 - Git repository is cloned to current directory instead of `/tmp` to avoid issues related to temporary files being cleaned periodically by OS
 - health check endpoint is configured to follow Kubernetes conventions i.e. `/health`
-- default health check caching time is reduced from 5 minutes to 15 seconds (so backend connectivity issues can be detected early)
+- default health check caching time is reduced from 5 minutes to 15 seconds (so backend connectivity issues can be detected earlier)
 - default logging is reduced to `WARN` so AWS CloudWatch receives only important messages
 
 ## Build and release
