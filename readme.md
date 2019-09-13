@@ -17,7 +17,7 @@ The easiest way to run Spring Cloud Config server is using Docker client:
       -e AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID \ 
       -e AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY \
       -e AWS_KMS_KEYID=myKeyId \ 
-      hekonsek/awsom-spring-cloud-config-server:0.1.0
+      hekonsek/awsom-spring-cloud-config-server:0.3.0
       
 Where:
 
