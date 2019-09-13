@@ -33,6 +33,7 @@ By default this Cloud Config server distribution uses the following settings:
 - Git repository is cloned to current directory instead of `/tmp` to avoid issues related to temporary files being cleaned periodically by OS
 - health check endpoint is configured to follow Kubernetes conventions i.e. `/health`
 - default health check caching time is reduced from 5 minutes to 15 seconds (so backend connectivity issues can be detected early)
+- default logging is reduced to `WARN` so AWS CloudWatch receives only important messages
 
 ## Build and release
 

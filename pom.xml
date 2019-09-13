@@ -12,7 +12,7 @@
     </parent>
 
     <groupId>com.github.hekonsek</groupId>
-    <artifactId>awsom-spring-cloud-config-server</artifactId>
+    <artifactId>aws-spring-cloud-config-server</artifactId>
     <version>0.2-SNAPSHOT</version>
 
     <properties>
@@ -61,7 +61,7 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <repository>hekonsek/awsom-spring-cloud-config-server</repository>
+                    <repository>hekonsek/aws-spring-cloud-config-server</repository>
                     <tag>${project.version}</tag>
                     <buildArgs>
                         <JAR_FILE>${project.build.finalName}.jar</JAR_FILE>
