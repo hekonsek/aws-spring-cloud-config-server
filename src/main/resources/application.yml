@@ -20,3 +20,6 @@ management:
 health:
   config:
     time-to-live: 15
+logging:
+  level:
+    root: warn
